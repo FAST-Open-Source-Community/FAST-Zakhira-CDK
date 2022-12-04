@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: AWS CDK GitHub Actions
-      uses: youyo/aws-cdk-github-actions@v2.1.2
+      uses: jd-carroll/aws-cdk-cli-commands@v1.1.10
       with:
         cdk_subcommand: 'diff'
         actions_comment: true
