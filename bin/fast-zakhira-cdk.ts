@@ -2,6 +2,8 @@
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
 import { FastZakhiraCdkStack } from '../lib/fast-zakhira-cdk-stack';
+import { StorageStack } from '../lib/storage-stack';
+
 
 const app = new cdk.App();
 new FastZakhiraCdkStack(app, 'FastZakhiraCdkStack', {
@@ -19,3 +21,5 @@ new FastZakhiraCdkStack(app, 'FastZakhiraCdkStack', {
 
   /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
 });
+
+new StorageStack(app, 'StorageStack');
