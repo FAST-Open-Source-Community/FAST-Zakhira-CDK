@@ -16,6 +16,9 @@ jobs:
     
     - name: AWS CDK GitHub Actions
       uses: youyo/aws-cdk-github-actions@v2.1.2
+      with:
+        cdk_subcommand: 'diff'
+        actions_comment: true
       
     - name: Run a one line example script
       run: echo Hello, World!
