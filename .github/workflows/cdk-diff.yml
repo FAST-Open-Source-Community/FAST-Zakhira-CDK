@@ -1,8 +1,6 @@
-name: CDK
+name: CDK-DIFF
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
 env:
@@ -12,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    
     - uses: actions/checkout@v2
     
     - name: AWS CDK GitHub Actions
