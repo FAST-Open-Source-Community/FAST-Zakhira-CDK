@@ -2,10 +2,11 @@ name: CDK
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
-    
+    branches: [ main ]
+env:
+  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}    
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,7 +16,14 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: AWS CDK GitHub Actions
-      uses: youyo/aws-cdk-github-actions@v2.1.2
+      uses: youyo/aws-cdk-github-actions@v2
+      with:
+        cdk_subcommand: 'diff'
+        actions_comment: true
+      env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: 'eu-west-1'
       
     - name: Run a one line example script
       run: echo Hello, World!
