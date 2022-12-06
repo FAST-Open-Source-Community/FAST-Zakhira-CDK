@@ -1,7 +1,5 @@
-# Welcome to Fast Zakhira CDK TypeScript project
-
-
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+# Welcome to Fast Zakhira CDK project
+We use this repository to manage aws resources
 
 ## How do I contribute?
 
